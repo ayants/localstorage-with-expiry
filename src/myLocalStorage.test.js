@@ -8,10 +8,7 @@ beforeAll(async()=>{
 })
 
 describe("Test local storage with expiry", async()=>{
-
-
     test("Should store and retrieve an item before expiry", async()=>{
-      
         const key = "testKey"
         const value = "testValue"
         const expiry = 200000
