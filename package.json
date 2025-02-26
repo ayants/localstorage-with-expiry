@@ -1,0 +1,23 @@
+{
+  "name": "y",
+  "version": "1.0.0",
+  "description": "an utility funcitons which give expiry features to localstorage",
+  "main": "index.js",
+  "scripts": {
+    "test": "vitest"
+  },
+  "keywords": [
+    "localStorage",
+    "cookies",
+    "expiry",
+    "browserStorage",
+    "sessionStorage"
+  ],
+  "author": "github.com/ayanonline",
+  "license": "ISC",
+  "devDependencies": {
+    "jsdom": "^26.0.0",
+    "vitest": "^3.0.7"
+  },
+  "type": "module"
+}
