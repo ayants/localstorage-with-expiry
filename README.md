@@ -81,5 +81,5 @@ This project is licensed under the MIT License.
 
 ## Author
 
-[github.com/ayanonline](https://github.com/typescript-any)
+[github.com/typescript-any](https://github.com/typescript-any)
 
