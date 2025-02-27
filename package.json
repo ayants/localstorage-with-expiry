@@ -1,23 +1,32 @@
 {
-  "name": "y",
+  "name": "localstorage-plus",
   "version": "1.0.0",
-  "description": "an utility funcitons which give expiry features to localstorage",
-  "main": "index.js",
+  "description": "A utility that extends localStorage with expiration support",
   "scripts": {
     "test": "vitest"
   },
   "keywords": [
     "localStorage",
-    "cookies",
+    "storage",
     "expiry",
-    "browserStorage",
-    "sessionStorage"
+    "browser",
+    "utility"
   ],
   "author": "github.com/ayanonline",
-  "license": "ISC",
+  "license": "MIT",
   "devDependencies": {
+    "@types/node": "^22.13.5",
     "jsdom": "^26.0.0",
+    "typescript": "^5.7.3",
     "vitest": "^3.0.7"
   },
-  "type": "module"
+  "type": "module",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/ayanonline/localstorage-plus.git"
+  },
+  "bugs": {
+    "url": "https://github.com/ayanonline/localstorage-plus/issues"
+  },
+  "homepage": "https://github.com/ayanonline/localstorage-plus#readme"
 }

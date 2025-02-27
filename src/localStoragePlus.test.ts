@@ -1,5 +1,5 @@
 import { beforeAll, describe, expect, test, vi } from "vitest"
-import myLocalStorage from "./myLocalStorage"
+import localStoragePlus from "./localStoragePlus"
 
 
 beforeAll(async()=>{
@@ -12,22 +12,22 @@ describe("Test local storage with expiry", async()=>{
         const key = "testKey"
         const value = "testValue"
         const expiry = 200000
-        myLocalStorage.setItem(key, value, expiry)
+        localStoragePlus.setItem(key, value, expiry)
         vi.advanceTimersByTime(100000)
-        const result = myLocalStorage.getItem(key)
+        const result = localStoragePlus.getItem(key)
         expect(result).toBe(value)
     })
     test("Should return null for expired item", async()=>{
         const key = "testKey"
         const value  = "testValue"
         const expiry = 1000
-        myLocalStorage.setItem(key, value, expiry)
+        localStoragePlus.setItem(key, value, expiry)
         vi.advanceTimersByTime(2000)
-        const result = myLocalStorage.getItem(key)
+        const result = localStoragePlus.getItem(key)
         expect(result).toBe(null)
     })
     test("Should return null if item does not exist", async()=>{
-        const result = myLocalStorage.getItem("nonExistentKey")
+        const result = localStoragePlus.getItem("nonExistentKey")
         expect(result).toBe(null)
     })
     test("Should handle multiple keys with different expiry", async()=>{
@@ -37,11 +37,11 @@ describe("Test local storage with expiry", async()=>{
         const key2 = "testKey2"
         const value2 = "testValue2"
         const expiry2 = 300000
-        myLocalStorage.setItem(key1, value1, expiry1)
-        myLocalStorage.setItem(key2, value2, expiry2)
+        localStoragePlus.setItem(key1, value1, expiry1)
+        localStoragePlus.setItem(key2, value2, expiry2)
         vi.advanceTimersByTime(100000)
-        const result1 = myLocalStorage.getItem(key1)
-        const result2 = myLocalStorage.getItem(key2)
+        const result1 = localStoragePlus.getItem(key1)
+        const result2 = localStoragePlus.getItem(key2)
         expect(result1).toBe(value1)
         expect(result2).toBe(value2)
     })
