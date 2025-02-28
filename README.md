@@ -1,8 +1,9 @@
-# localStoragePlus
+# expiryLocalStorage
 
 A utility that extends the browser's `localStorage` to support automatic expiration of stored items.
 
 ## Features
+
 - Store data with an expiration time.
 - Automatically removes expired items.
 - Simple API for setting and retrieving items.
@@ -12,17 +13,15 @@ A utility that extends the browser's `localStorage` to support automatic expirat
 You can install the package using npm:
 
 ```sh
-npm install localStoragePlus
+npm i expiry-localstorage
 ```
-
-Or use it directly in your project by copying `localStoragePlus.js`.
 
 ## Usage
 
 ### Importing
 
 ```javascript
-import localStoragePlus from "./localStoragePlus";
+import expiryLocalStorage from "expiry-localstorage";
 ```
 
 ### Setting an Item
@@ -30,7 +29,7 @@ import localStoragePlus from "./localStoragePlus";
 Use `setItem` to store an item with an expiry time (in milliseconds):
 
 ```javascript
-localStoragePlus.setItem("testKey", "testValue", 200000); // Expires in 200 seconds
+expiryLocalStorage.setItem("testKey", "testValue", 200000); // Expires in 200 seconds
 ```
 
 ### Getting an Item
@@ -38,38 +37,22 @@ localStoragePlus.setItem("testKey", "testValue", 200000); // Expires in 200 seco
 Use `getItem` to retrieve an item. If it is expired or doesn't exist, it returns `null`:
 
 ```javascript
-const result = localStoragePlus.getItem("testKey");
+const result = expiryLocalStorage.getItem("testKey");
 console.log(result); // "testValue" (if not expired), otherwise `null`
-```
-
-## Testing
-
-This project uses `vitest` for testing. To run the tests:
-
-```sh
-npm test
-```
-
-## Project Structure
-
-```
-localStoragePlus/
-│── localStoragePlus.js  # Main localStorage utility
-│── localStoragePlus.test.js  # Tests using Vitest
-│── package.json  # Project metadata
-│── README.md  # Documentation
 ```
 
 ## API Reference
 
-### `localStoragePlus.setItem(key: string, value: any, expiry: number)`
+### `expiryLocalStorage.setItem(key: string, value: any, expiry: number)`
+
 Stores a value in localStorage with an expiry time.
 
 - `key` (string): The key to store the value under.
-- `value` (any): The value to store (serialized as JSON).
+- `value` (any): The value to store.
 - `expiry` (number): Expiry time in milliseconds from now.
 
-### `localStoragePlus.getItem(key: string): any | null`
+### `expiryLocalStorage.getItem(key: string): any | null`
+
 Retrieves a value from localStorage if it has not expired.
 
 - `key` (string): The key of the item to retrieve.
@@ -81,5 +64,4 @@ This project is licensed under the MIT License.
 
 ## Author
 
-[github.com/typescript-any](https://github.com/typescript-any)
-
+[Ayan Ghosh](https://github.com/typescript-any)

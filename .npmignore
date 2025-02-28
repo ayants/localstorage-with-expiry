@@ -1,6 +1,21 @@
-node_modules
-.vitest
-.vscode
-.DS_Store
-package-lock.json
-.gitignore
+# Source files (only dist/ is needed in the package)
+
+src/
+\*.ts
+
+# Test files and Vitest config
+
+tests/
+_.test.ts
+_.spec.ts
+vitest.config.ts
+
+# Development dependencies and build artifacts
+
+node_modules/
+dist/\*.ts
+tsconfig.json
+
+# Misc
+
+\*.log

@@ -1,9 +1,13 @@
 {
-  "name": "localstorage-plus",
-  "version": "1.0.0",
-  "description": "A utility that extends localStorage with expiration support",
+  "name": "expiry-localstorage",
+  "version": "1.0.1",
+  "description": "A custom local storage implementation with expiry time support",
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
   "scripts": {
-    "test": "vitest"
+    "test": "vitest",
+    "build": "tsc",
+    "prepublishOnly": "npm run build"
   },
   "keywords": [
     "localStorage",
@@ -12,7 +16,7 @@
     "browser",
     "utility"
   ],
-  "author": "github.com/ayanonline",
+  "author": "github.com/typescript-any",
   "license": "MIT",
   "devDependencies": {
     "@types/node": "^22.13.5",
@@ -23,10 +27,10 @@
   "type": "module",
   "repository": {
     "type": "git",
-    "url": "https://github.com/ayanonline/localstorage-plus.git"
+    "url": "https://github.com/typescript-any/expiry-localstorage.git"
   },
   "bugs": {
-    "url": "https://github.com/ayanonline/localstorage-plus/issues"
+    "url": "https://github.com/typescript-any/expiry-localstorage/issues"
   },
-  "homepage": "https://github.com/ayanonline/localstorage-plus#readme"
+  "homepage": "https://github.com/typescript-any/expiry-localstorage#readme"
 }

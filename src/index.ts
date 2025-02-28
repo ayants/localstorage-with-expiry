@@ -1,12 +1,12 @@
 /**
  * A custom local storage implementation that stores data with an expiry time.
- * @namespace localStoragePlus
+ * @namespace expiryLocalStorage
  * @example
  * Set an item with an expiry time of 200000 milliseconds (200 seconds)
- * localStoragePlus.setItem("testKey", "testValue", 200000);
+ * expiryLocalStorage.setItem("testKey", "testValue", 200000);
  *
  * Retrieve the item
- * const result = localStoragePlus.getItem("testKey");
+ * const result = expiryLocalStorage.getItem("testKey");
  * console.log(result); // "testValue" (if not expired)
  */
 
@@ -15,14 +15,14 @@ interface StoredValue<T> {
   expiry: number;
 }
 
-const localStoragePlus = {
+const expiryLocalStorage = {
   /**
    * Sets an item in local storage with an expiry time.
    * @param key - The key under which the value will be stored.
    * @param value - The value to be stored. This will be serialized to JSON.
    * @param expiry - The expiry time in milliseconds from the current time.
    * @example
-   * localStoragePlus.setItem("testKey", "testValue", 200000); // Expires in 200 seconds
+   * expiryLocalStorage.setItem("testKey", "testValue", 200000); // Expires in 200 seconds
    */
   setItem<T>(key: string, value: T, expiry: number): void {
     if (!key || expiry <= 0) return;
@@ -42,7 +42,7 @@ const localStoragePlus = {
    * @param key - The key of the item to retrieve.
    * @returns The stored value if the item is not expired, otherwise `null`.
    * @example
-   * const result = localStoragePlus.getItem("testKey");
+   * const result = expiryLocalStorage.getItem("testKey");
    * console.log(result); // "testValue" (if not expired), otherwise `null`
    */
   getItem<T>(key: string): T | null {
@@ -86,4 +86,4 @@ const localStoragePlus = {
   },
 };
 
-export default localStoragePlus;
+export default expiryLocalStorage;
